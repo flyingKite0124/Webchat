@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="{{ static_url('bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ static_url('font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ static_url('css/buttons.css') }}">
+    <link rel="stylesheet" href="{{ static_url('css/style.css') }}">
+
+</head>
+<body background="{{ static_url('image/background/1.jpg') }}">
+<h1 style="text-align:center;margin-top:5%" class="threed">ZJU Chat</h1><br>
+<div class="container">
+    <div class="text-center">
+        <div class="button-group">
+            <button id="showLogin" type="button" class="button button-3d button-action button-ground"
+                    onclick="$('#loginForm').removeClass('hidden'); $('#signupForm').addClass('hidden');">登陆
+            </button>
+            <button id="showSignup" type="button" class="button button-3d button-action button-ground"
+                    onclick="$('#signupForm').removeClass('hidden'); $('#loginForm').addClass('hidden');">注册
+            </button>
+        </div>
+    </div>
+
+    <div id="signupForm" class="row hidden">
+        <div class="col-md-7 col-md-offset-3">
+            <div class="form-horizontal" role="form">
+                <div class="form-group form-group-lg has-feedback ">
+                    <label class="col-sm-2 control-label press" for="nickname">昵称</label>
+                    <div class="col-xs-6">
+                        <input class="form-control" type="text" id="nickname" placeholder="请输入昵称">
+                        <span id="nickname_warning" class="warning"></span>
+                    </div>
+                    <label class="control-label warning" id="la1">*</label>
+                </div>
+                <div class="form-group form-group-lg has-feedback">
+                    <label class="col-sm-2 control-label press" for="email">邮箱</label>
+                    <div class="col-xs-6">
+                        <input class="form-control" type="text" id="email" placeholder="xx@xx.com">
+                        <span id="email_warning" class="warning"></span>
+                    </div>
+                    <label class="control-label warning" id="la2">*</label>
+                </div>
+                <div id="ys3" class="form-group form-group-lg has-feedback">
+                    <label class="col-sm-2 control-label press" for="password">密码</label>
+                    <div class="col-xs-6">
+                        <input class="form-control" type="password" id="password" placeholder="请输入密码">
+                        <span id="password_warning" class="warning"></span>
+                    </div>
+                    <label class="control-label warning" id="la3">*</label>
+                </div>
+                <div id="ys4" class="form-group form-group-lg has-feedback">
+                    <label class="col-sm-2 control-label press" for="passwordAgain">确认密码</label>
+                    <div class="col-xs-6">
+                        <input class="form-control" type="password" id="passwordAgain" placeholder="6位～15位">
+                        <span id="passwordAgain_warning" class="warning"></span>
+                    </div>
+                    <label class="control-label warning" id="la4">*</label>
+                </div>
+                <div id="ys5" class="form-group form-group-lg has-feedback">
+                    <label class="col-sm-2 control-label press">头像</label>
+                    <div class="col-xs-6" style="margin:auto">
+                        <label for="photo1"><img src="{{ static_url('image/avatar/0.jpg') }}" class="left"
+                                                 alt=""/></label>
+                        <label for="photo2"><img src="{{ static_url('image/avatar/1.jpg') }}" class="left"
+                                                 alt=""/></label>
+                        <label for="photo3"><img src="{{ static_url('image/avatar/2.jpg') }}" class="left"
+                                                 alt=""/></label>
+                        <label for="photo4"><img src="{{ static_url('image/avatar/3.jpg') }}" class="left"
+                                                 alt=""/></label>
+                        <form>
+                            <input id="photo1" type="radio" checked name="photo" style="margin:auto 23px" value="0"/>
+                            <input id="photo2" type="radio" name="photo" style="margin:auto 23px" value="1"/>
+                            <input id="photo3" type="radio" name="photo" style="margin:auto 23px" value="2"/>
+                            <input id="photo4" type="radio" name="photo" style="margin:auto 23px" value="3"/>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div class=" col-xs-6 col-md-offset-2">
+                    <input id="signupBtn" value="注册"
+                           class="form-control button button-glow button-rounded button-action">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="loginForm" class="row">
+        <div class="col-md-7 col-md-offset-3 show">
+            <div class="form-horizontal" role="form">
+                <div id="ys11" class="form-group form-group-lg has-feedback">
+                    <label class="col-sm-2 control-label press" for="login_name">用户名</label>
+                    <div class="col-xs-6">
+                        <input class="form-control" type="text" id="login_name" placeholder="">
+                    </div>
+                </div>
+                <div id="ys12" class="form-group form-group-lg has-feedback">
+                    <label class="col-sm-2 control-label press" for="login_password">密码</label>
+                    <div class="col-xs-6">
+                        <input class="form-control" type="password" id="login_password" placeholder="">
+                        <span id="login_warning" class="warning"></span>
+                    </div>
+                </div>
+                <div class=" col-xs-6 col-md-offset-2">
+                    <input id="loginBtn" value="登录"
+                           class="form-control button button-glow button-rounded button-action">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{ static_url('js/jquery.min.js') }}"></script>
+<script src="{{ static_url('bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ static_url('js/sign.js') }}"></script>
+</body>
+</html>
